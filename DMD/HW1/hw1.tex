@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+% \usepackage{indentfirst}
+
+\title{DMD homework 1}
+\author{Andrew Tropin}
+\date{andrewtropin@gmail.com}
+
+\begin{document}
+  % \maketitle
+  \begin{center}
+    \textbf{DMD homework 1} \\
+    Andrew Tropin \\
+    \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  \end{center}
+
+  I have been programming for 9 years. Participated in the semi-finals
+  ACM ICPC. Worked in Yandex as python software developer, after as site
+  reliability engineer in search perfomance team.
+
+  First of all I don't trust in proprietary software. That why this paper
+  cover only open source DBMS. Also it doesn't cover NoSQL, because
+  such review is not for one page.
+
+  \begin{table}[h]
+    \centering
+    \label{tabel:RDBMS}
+    \begin{tabular}{c|c|c|c|c}
+      DBMS       & SQL           & user management & scalability   & zero-conf \\
+      \hline
+      sqlite     & weakly typed  & -               & one file      & 3 \\
+      mysql      & many features & +               & client-server & 2 \\
+      postgresql & most complete & +               & client-server & 1 \\
+    \end{tabular}
+    \caption{Comparison of RDBMS}
+  \end{table}
+
+  This small table \ref{tabel:RDBMS} helps us to separate in three groups,
+  according to scale.
+
+  First group contain sqlite.
+  sqlite haven't overhead due to IPC, easy to setup and use, zeroconf but
+  has limited support of SQL. This RDBMS is widely-spread and have libraries
+  for most popular programming languages.
+  It's usefull as test DBMS for developing applications or for creating
+  small applications with embeded DB. But it can't be scaled and used in
+  Highload projects.
+
+  Second group contain MySQl. Most popular open source. It's implements
+  many SQL features, easy to setup in small projects, but can be scaled
+  for huge projects. It's slow-developing, but can be used in medium-size
+  projects.
+
+  Third group contain postgresql. Most stable, feature-rich and
+  production-ready. It has huge community and it is intensively developing.
+  This DBMS should be used for real highload-projects.
+
+\begin{thebibliography}{99}
+  \bibitem{b1} SQLite official site. \href{https://sqlite.org/}{https://sqlite.org/}
+  \bibitem{b2} MySQl official site. \href{https://www.mysql.com/}{https://www.mysql.com/}
+  \bibitem{b3} postgresql official site. \href{http://postgresql.org/}{http://postgresql.org/}
+\end{thebibliography}
+
+\end{document}
