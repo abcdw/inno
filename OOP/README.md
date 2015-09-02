@@ -12,6 +12,6 @@ core course
 
 ## Materials
 
-* [Data Structures and Algorithms in Java, 6th Edition](http://www.topitbooks.com/data-structures-algorithms-java-6th-edition-4460.html)
+* [Touch of Class](http://www.amazon.com/Touch-Class-Learning-Program-Contracts/dp/3540921443)
 
 
