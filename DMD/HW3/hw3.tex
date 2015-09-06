@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 3} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+
+  \begin{problem}{1}
+    I renamed some attributes for style reason. \\
+
+    \begin{itemize}
+      \item One-to-Many:
+      \begin{itemize}
+        \item Employee(\underline{EID}, address, salary, name)
+        \item Room(\underline{ROID}, period)
+        \item Patient(\underline{PID}, name, address, ROID, EID)
+        \item Record(\underline{REID}, patient\_id, appointment)
+        \item Medicine(\underline{CODE}, price)
+        \item Bill(\underline{BID}, CODE, dosage, indications, PID)
+      \end{itemize}
+      \item Many-to-Many:
+      \begin{itemize}
+        \item Maintains(\underline{EID}, \underline{REID})
+      \end{itemize}
+      \item Generalizations(ISA):
+      \begin{itemize}
+        \item Receptionist(\underline{EID}, adress, salary, name)
+        \item Doctor(\underline{EID}, adress, salary, name, specialty)
+        \item Nurse(\underline{EID}, adress, salary, name, shift, ROID)
+        \item Trainee(\underline{EID}, adress, salary, name, specialty)
+        \item Permanent(\underline{EID}, adress, salary, name, specialty)
+        \item Visiting(\underline{EID}, adress, salary, name, specialty)
+      \end{itemize}
+    \end{itemize}
+
+  \end{problem}
+
+
+\end{document}
