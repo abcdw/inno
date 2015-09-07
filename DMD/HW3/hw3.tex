@@ -65,6 +65,43 @@
     \end{itemize}
 
   \end{problem}
+  \begin{problem}{2}
+    \begin{itemize}
+      \item $\Pi_{EID, \ldots}\sigma_{ROID = 107}(Nurse) \cup \Pi_{EID, \ldots} (\sigma_{ROID=107}(Patient) \Join Doctor)$
+        % \cup \sigma_{\sigma_{ROID=107}(Doctor \Join Patient) (Doctor)$
+      \item $Nurse - \Pi_{EID, \ldots}(Nurse \Join Rooms \Join Patient \Join \sigma_{name = Dr.Alex}(Doctor))$
+      \item $\sigma_{salary > MIN(\Pi_{salary}(Doctor))}(Employee)$
+      \item $\Pi_{ROID}(Patient \Join Rooms) \Join Rooms$
+    \end{itemize}
+  \end{problem}
+  \begin{problem}{3}
+    \begin{itemize}
+      \item $\sigma_{salary=MAX(\Pi_{e3.salary}\sigma{e1.salary = MAX(\Pi_{salary}(Employees)) \wedge e1.salary > e2.salary \wedge e2.salary > e3.salary
+      \wedge e1.eid \not= e2.eid \not= e3.eid}(\rho_{e1}(Employees) \times \rho_{e2}(Employees) \times \rho_{e3}(Employees)))}(Employees)$ Result is $\{(3)\}$. 
+
+      \item $\Pi_{eid} \sigma_{aid = B1100}(Employees \Join Certified)$. Result is $\{(3), (4)\}$
+      \item $\Pi_{flight\#}(Flights) - \Pi_{flight\#}( (\Pi_{flight\#}(Flights) \times \Pi_{eid} (\sigma_{salary > 70000}(Employees \Join Certified))) - \Pi_{flight\#, eid}(\sigma_{range \geq distance}(Aircraft \times Flights) \Join Certified)$. Result is $\{(111), (112), (300)\}$
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{4}
+    $[0, m * n]$
+  \end{problem}
+  \begin{problem}{5}
+    \begin{itemize}
+      \item R(A, B), S(A, B)
+      \item R = \{(1, 2)\}
+      \item S = \{(1, 3)\}
+      \item $\Pi_{A}(R-S) = \{(1)\}, \Pi_{A}(R) - \Pi_{A}(S) = \{\}$
+    \end{itemize}
+  \end{problem}
+  \begin{problem}{6}
+    \begin{itemize}
+      \item $R \Join S$ and $\sigma_{R.C=S.C}(R \times S)$ near the same, but return relations with different number of attributes.
+    First one returns <A,B,C,D> and the second <A,B,R.C,S.C,D>.
+      \item Same. Both of them returns uniq tuples with one attribute C, where exist at least one tuple in each relation(R, S) with value of attribute C.
+    \end{itemize}
+  \end{problem}
 
 
 \end{document}
