@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 4} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1} I forgot about NATURAL JOIN =(
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{1.sql}
+  \end{problem}
+
+  \begin{problem}{2}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{2.sql}
+  \end{problem}
+
+  \begin{problem}{3} Remembered about NATURAL, but late. It was last task, that i've done.
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{3.sql}
+  \end{problem}
+
+  \begin{problem}{4}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{4.sql}
+  \end{problem}
+
+  \begin{problem}{5}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{5.sql}
+  \end{problem}
+
+  \begin{problem}{6}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{6.sql}
+  \end{problem}
+
+  \begin{problem}{7}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{7.sql}
+  \end{problem}
+
+  \begin{problem}{8}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{8.sql}
+  \end{problem}
+
+  \begin{problem}{9}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{9.sql}
+  \end{problem}
+
+  \begin{problem}{10}
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{10.sql}
+  \end{problem}
+
+
+\end{document}
