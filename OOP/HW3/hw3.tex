@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 3} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    \begin{minted}{eiffel}
+      explore
+          -- Modify the map.
+        do
+          Zurich.add_station ("Super station", -1800, 500)
+          Zurich.connect_station (11, "Super station")
+          Zurich_map.update
+          Zurich_map.fit_to_window
+          -- Zurich.station ("Super station")
+          Zurich_map.station_view (Zurich.station ("Super station")).highlight
+          wait (2)
+          Zurich_map.station_view (Zurich.station ("Super station")).unhighlight
+          wait (2)
+          Zurich_map.station_view (Zurich.station ("Super station")).highlight
+          wait (2)
+          Zurich_map.station_view (Zurich.station ("Super station")).unhighlight
+          wait (2)
+          Zurich_map.station_view (Zurich.station ("Super station")).highlight
+          wait (2)
+          Zurich_map.station_view (Zurich.station ("Super station")).unhighlight
+          wait (2)
+        end
+    \end{minted}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{minted}{eiffel}
+      execute
+        do
+          Io.put_string("Name: Andrew Tropin%N")
+          Io.put_string("Age: ")
+          Io.put_integer(21)
+          Io.new_line
+          Io.put_string("Mother tongue: Russian%N")
+          Io.put_string("Has a cat: ")
+          Io.put_boolean(False)
+          Io.new_line
+        end
+    \end{minted}
+  \end{problem}
+  \begin{problem}
+    \begin{enumerate}
+      \item query
+      \item query
+      \item command
+      \item command
+      \item command
+      \item query
+    \end{enumerate}
+  \end{problem}
+\end{document}
