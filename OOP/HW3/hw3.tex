@@ -12,7 +12,7 @@
 
 \pagestyle{fancy}
 \makeatletter
-\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<OOP>>}
 \fancyfoot[L]{\footnotesize \@author}
 \fancyfoot[R]{\thepage}
 \fancyfoot[C]{}
@@ -26,7 +26,7 @@
 \newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
   \enskip\ignorespaces}{}
 
-\title{DMD homework 3} % Fill the number of the homework
+\title{OOP homework 3} % Fill the number of the homework
 \author{Tropin Andrew \\
   e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
   github: \href{http://github.com/abcdw}{abcdw}}
@@ -41,7 +41,7 @@
       explore
           -- Modify the map.
         do
-          Zurich.add_station ("Super station", -1800, 500)
+          Zurich.add_station ("Super station", 1800, -500)
           Zurich.connect_station (11, "Super station")
           Zurich_map.update
           Zurich_map.fit_to_window
