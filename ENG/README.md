@@ -15,4 +15,6 @@ core course
 * SB p. 136 ex. 1A(c)   (2015-08-31)
 * WB p. 7   ex. 1, 2, 3 (2015-09-02)
 * SB p. 8   ex. 2       (2015-09-07)
+* SB p. 138 ex. b, c    (2015-09-16)
+* WB p. 10-12 ex. 1-6 + distening(p.12)
 
