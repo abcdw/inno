@@ -1,0 +1,132 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 5} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1} select all categories and sort by name.
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{1.sql}
+    \begin{verbatim}
+       id |        name
+      ----+--------------------
+        1 | Leading Actor
+        3 | Leading Actress
+        2 | Supporting Actor
+        4 | Supporting Actress
+      (4 lines)
+    \end{verbatim}
+  \end{problem}
+
+  \begin{problem}{2} select uniq movie names for nominations in 1990 and sort by name.
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{2.sql}
+    \begin{verbatim}
+                movie
+      -------------------------
+       Awakenings
+       Cyrano de Bergerac
+       Dances With Wolves
+       Dick Tracy
+       Ghost
+       Good Fellas
+       Longtime Companion
+       Misery
+       Mr. & Mrs. Bridge
+       Postcards from the Edge
+       Pretty Woman
+       Reversal of Fortune
+       The Field
+       The Godfather, Part III
+       The Grifters
+       Wild at Heart
+      (16 lines)
+    \end{verbatim}
+  \end{problem}
+
+  \begin{problem}{3} Find all persons nominated in 2000-2002 with cageory 'Leading Actor' and sort by last\_name and show only uniq last\_names.
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{3.sql}
+    \begin{verbatim}
+       last_name
+      ------------
+       Bardem
+       Brody
+       Cage
+       Caine
+       Crowe
+       Day-Lewis
+       Hanks
+       Harris
+       Nicholson
+       Penn
+       Rush
+       Smith
+       Washington
+       Wilkinson
+      (14 lines)
+    \end{verbatim}
+  \end{problem}
+
+
+  \begin{problem}{4} Find movies with most count of nominations and sort that list by movie name
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{4.sql}
+    \begin{verbatim}
+               movie         | count
+      -----------------------+-------
+       All about Eve         |     5
+       Bonnie and Clyde      |     5
+       From Here to Eternity |     5
+       Mrs. Miniver          |     5
+       Network               |     5
+       On the Waterfront     |     5
+       Peyton Place          |     5
+       The Godfather Part II |     5
+       Tom Jones             |     5
+      (9 lines)
+    \end{verbatim}
+    % \end{minted}
+  \end{problem}
+
+  \begin{problem}{5} Find most popular first\_name if there names with same count
+    print first in alphabetical order.
+    \inputminted[fontsize=\small, fontfamily=rm]{sql}{5.sql}
+    \begin{verbatim}
+       first_name | count
+      ------------+-------
+       Robert     |    17
+      (1 line)
+    \end{verbatim}
+  \end{problem}
+
+
+\end{document}
