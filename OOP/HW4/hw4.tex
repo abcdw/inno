@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+% \usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<OOP>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{OOP homework 4} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    Class is a description of set of objects with similiar properties. \\
+    Class like a baking pan and object like a pie, baked with that pan.
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{itemize}
+      \item STRING\_8
+      \item REAL\_64
+      \item REAL\_64
+    \end{itemize}
+
+    Queries:
+    \begin{itemize}
+      \item Zurich.line(13).color.brightness
+      \item Zurich.line(31).stations.at(3).item.position.y
+      \item Zurich.line(31).next.station(Zurich.station(``Loewenplatz''),
+        Zurich.line(31).west\_terminal)
+      \item Zurich.station("Paradeplatz").lines.count
+      \item Zurich.connecting\_lines(Zurich.station(``Paradeplatz''),
+        Zurich.station(``Rennweg'')).has(Zurich.line(7))
+    \end{itemize}
+
+    % \begin{minted}{eiffel}
+      % execute
+        % do
+          % Io.put_string("Name: Andrew Tropin%N")
+          % Io.put_string("Age: ")
+          % Io.put_integer(21)
+          % Io.new_line
+          % Io.put_string("Mother tongue: Russian%N")
+          % Io.put_string("Has a cat: ")
+          % Io.put_boolean(False)
+          % Io.new_line
+        % end
+    % \end{minted}
+  \end{problem}
+
+  \begin{problem}{3}
+    \begin{enumerate}
+      \item query
+      \item query
+      \item command
+      \item query
+      \item command
+      \item query
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{4}
+    You can find me. Andrew Tropin.
+  \end{problem}
+\end{document}
