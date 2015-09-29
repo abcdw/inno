@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+% \usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 5} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1} select all categories and sort by name.
+    % \inputminted[fontsize=\small, fontfamily=rm]{sql}{1.sql}
+    \begin{enumerate}[(a)]
+      \item 666.6667
+      \item 668.1667
+      \item 1040000
+      \item 40000
+      \item 33000
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2.1}
+    \begin{enumerate}[(a)]
+      \item
+      \begin{enumerate}[i.]
+        \item YES. $\alpha \rightarrow 9, \alpha \rightarrow 16$
+        \item NO. all right.
+        \item YES. $F \rightarrow \alpha, F \rightarrow \beta$
+        \item NO. all right.
+        \item NO. all right.
+      \end{enumerate}
+      \item NO. You can't answer this question, observing the instance of S.
+        One instance is not representative.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2.2}
+    \begin{enumerate}[(a)]
+      \item (b)
+      \item
+      \begin{enumerate}[i.]
+        \item YES
+        \item YES
+        \item NO
+        \item NO
+      \end{enumerate}
+      \item False
+        \begin{itemize}
+          \item $Q \rightarrow Q$
+          \item $Q \rightarrow R$
+          \item $Q \rightarrow U$
+        \end{itemize}
+        \{Q\}* = \{Q, R, U\}
+      \item True
+        \begin{itemize}
+          \item $P \rightarrow P$
+          \item $P \rightarrow Q$
+          \item $Q \rightarrow R$
+          \item $Q \rightarrow U$
+          \item $S \rightarrow S$
+          \item $S \rightarrow T$
+          \item $S \rightarrow V$
+        \end{itemize}
+        \{P, S\}* = \{P, Q, R, S, T, U, V\}
+    \end{enumerate}
+  \end{problem}
+
+
+  % P Q
+  % Q R
+  % PS T
+  % % PS R
+  % % PS V
+  % QT U
+  % % QT R
+  % S V
+
+\end{document}
