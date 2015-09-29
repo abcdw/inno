@@ -1,0 +1,214 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<OOP>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{OOP homework 5} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+
+  \begin{problem}{1}
+    \begin{minted}{eiffel}
+note
+	description: "Creating new objects for Zurich."
+
+class
+	OBJECT_CREATION
+
+inherit
+	ZURICH_OBJECTS
+
+feature -- Explore Zurich
+
+	explore
+			-- Create new objects for Zurich.
+		do
+			add_buildings
+			add_route
+		end
+	add_buildings
+		local
+			first_corner, second_corner: VECTOR
+			eth, opera: BUILDING
+		do
+		    create first_corner.make(100, -100)
+		    create second_corner.make(200, -200)
+		    create eth.make ("Super Street", first_corner, second_corner)
+
+		    create first_corner.make (400, -1000)
+		    create second_corner.make (300, -1100)
+		    create opera.make ("Super Street 2", first_corner, second_corner)
+
+		    opera.set_name("Opera")
+		    eth.set_name("ETH")
+		    Zurich.add_building(eth)
+		    Zurich.add_building(opera)
+		end
+
+		add_route
+			local
+				leg1, leg2, leg3: LEG
+				opera_route: ROUTE
+			do
+			    create leg1.make (Zurich.station("Polyterrasse"), Zurich.station("Central"), Zurich.line(24))
+			    create leg2.make (Zurich.station("Central"), Zurich.station("Paradeplatz"), Zurich.line(7))
+			    create leg3.make (Zurich.station("Paradeplatz"), Zurich.station("Opernhaus"), Zurich.line(2))
+			    leg1.link(leg2)
+			    leg2.link(leg3)
+			    create opera_route.make(leg1)
+			    Zurich.add_route(opera_route)
+			end
+end
+    \end{minted}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{minted}{eiffel}
+note
+	description: "Temperature."
+
+class
+	TEMPERATURE
+
+create
+	make_celsius, make_kelvin
+
+feature -- Initialization
+
+	make_celsius (v: INTEGER)
+			-- Create with Celsius value `v'.
+		require
+			above_absolute_zero: v >= -Celsius_zero
+		do
+			celsius := v
+		ensure
+		    celsius_value_set: celsius = v
+			-- Create a temperature object encapsulating value 'v' intended in Celsius.
+			-- Your code here
+		end
+
+	make_kelvin (v: INTEGER)
+			-- Create with Kelvin value `v'.
+		require
+			above_absolute_zero: v >= 0
+		do
+			celsius := v - Celsius_zero
+		ensure
+		    kelvin_value_set: kelvin = v
+			-- Your code here
+			-- Create a temperature object encapsulating value 'v' intended in Kelvin.
+		end
+
+feature -- Access
+
+	Celsius_zero: INTEGER = 273
+
+	celsius: INTEGER
+			-- Value in Celsius scale.
+
+	kelvin: INTEGER
+			-- Value in Kelvin scale.
+		do
+			Result := celsius + Celsius_zero
+			-- Your code here
+			-- Compute the Kelvin temperature value from the Celsius value
+		end
+
+feature -- Measurement
+
+	average (other: TEMPERATURE): TEMPERATURE
+			-- Average temperature between `Current' and `other'.
+		require
+		    other_exists: other /= Void
+		do
+			create Result.make_celsius((celsius + other.celsiuss) // 2)
+			ensure
+				between: (celsius <= Result.celsius and Result.celsius <= other.celsius) or
+				(other.celsius <= Result.celsius and Result.celsius <= celsius)
+			-- Your code here.
+			-- Compute the average of two temperature. One is given by the current object,
+			-- the other is passed as an argument.
+		end
+invariant
+    above_absolute_zero: kelvin >= 0
+end
+    \end{minted}
+    \begin{minted}{eiffel}
+note
+	description : "project application root class"
+class
+	APPLICATION
+
+inherit
+	ARGUMENTS
+
+create
+	make
+
+feature {NONE} -- Initialization
+
+	make
+		local
+		    t1, t2, t3: TEMPERATURE
+			-- Run application.
+		do
+			--| Add your code here
+			-- print ("Hello Eiffel World!%N")
+			print ("Enter t1 in Celsius: ")
+			Io.read_integer
+			create t1.make_celsius (Io.last_integer)
+			print ("t1 in Kelvin is: ")
+			print (t1.kelvin)
+			print ("%N")
+
+			print ("Enter t2 in Kelvin: ")
+			Io.read_integer
+			create t2.make_kelvin(Io.last_integer)
+			print ("t2 in Celsius is: ")
+			print (t2.celsius)
+			print ("%N")
+
+			t3 := t1.average(t2)
+			print ("Average in Celsius is: ")
+			print (t3.celsius)
+			print ("%N")
+			print ("Average in Kelvin is: ")
+			print (t3.kelvin)
+			print ("%N")
+		end
+
+end
+    \end{minted}
+  \end{problem}
+
+\end{document}
