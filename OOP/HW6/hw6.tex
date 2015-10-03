@@ -1,0 +1,167 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<OOP>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{OOP homework 6} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+
+  \begin{problem}{1}
+    \begin{enumerate}
+      \item d
+      \item a
+      \item d
+      \item e
+      \item b
+      \item d, e
+      \item a
+      \item d, e
+      \item e, f
+    \end{enumerate}
+
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{minted}{eiffel}
+      local
+        i: like Zurich.stations.new_cursor
+      do
+        from
+          i := Zurich.stations.new_cursor
+        until
+          i.after or else i.item.name ~ "Central"
+        loop
+          i.forth
+        end
+        if not i.after then
+          i.item.set_position ([0.0, 0.0])
+        end
+      end
+    \end{minted}
+
+    \begin{minted}{eiffel}
+      local
+        station: STATION
+      do
+        across
+          Zurich.stations as i
+        loop
+          if i.item.name ~ "Central" then
+            station := i.item
+          end
+        end
+        if station /= Void then
+          station.set_position ([0.0, 0.0])
+        end
+      end
+    \end{minted}
+  \end{problem}
+
+  \begin{problem}{3}
+    \begin{minted}{eiffel}
+class
+  APPLICATION
+
+inherit
+
+  ARGUMENTS
+
+create
+  make
+
+feature {NONE} -- Initialization
+  make
+    local
+        i: INTEGER
+        j: INTEGER
+        w: INTEGER
+        tail: INTEGER
+        n: INTEGER
+        width: INTEGER
+    do
+      Io.read_integer
+      n := Io.last_integer
+
+      width := (n // 2 + 1) * 4 - 1 - ((n + 1)\\ 2) * 2
+
+      from
+          i := 0
+      variant
+          n - i
+      until
+        i = n
+      loop
+        w := (i // 2 + 1) * 2
+
+        from
+          j := 0
+          tail := width - w - 1
+        variant
+            width - j
+        until
+          j = width
+        loop
+          if (j < w or j > tail) and (i + j) \\ 2 = 0 then
+            print ("*")
+          else
+              print (" ")
+          end
+          j := j + 1
+        end
+
+        Io.new_line
+        i := i + 1
+      end
+
+    end
+end
+    \end{minted}
+  \end{problem}
+
+  \begin{problem}{4}
+    Board game
+
+    \inputminted{eiffel}{application.e}
+    \center{game.e} \\
+
+    \inputminted{eiffel}{game.e}
+    \center{die.e} \\
+
+    \inputminted{eiffel}{die.e}
+    \center{player.e} \\
+
+    \inputminted{eiffel}{player.e}
+  \end{problem}
+
+\end{document}
