@@ -7,8 +7,8 @@ core course
 
 ## Grading
 
-* 4 Graded Tutorials (Lab Sessions): 40%
-* Midterm Exam: 20%
+* 4 Graded Tutorials (Lab Sessions): 34%
+* Midterm Exam: 26%
 * Final Exam: 40%
 
 ## Materials
