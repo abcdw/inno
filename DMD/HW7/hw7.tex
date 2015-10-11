@@ -1,0 +1,136 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{minted}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2015, <<DMD>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.}
+  \enskip\ignorespaces}{}
+
+\title{DMD homework 7} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    \inputminted{sql}{./1.sql}
+    \begin{enumerate}
+      \item Complicated where condition, because of many Title columns.
+      \item Nope, because we can't simply use COUNT function.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{enumerate}
+      \item Add more columns with titles.
+      \item Add rows with same RentalID, CustID and different titles and nulls
+        for empty columns.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{3}
+    (\underline{RentalID}, CustID, CheckOutDate, \underline{Title}) \\
+    PK highlighted with underline.
+  \end{problem}
+
+  \begin{problem}{4}
+    \inputminted{sql}{./2.sql}
+  \end{problem}
+
+  \begin{problem}{5}
+    \inputminted{sql}{./3.sql}
+  \end{problem}
+
+  \begin{problem}{6}
+    \inputminted{sql}{./4.sql}
+  \end{problem}
+
+  \begin{problem}{7}
+    \begin{itemize}
+      \item $RentalID \rightarrow CustID$
+      \item $RentalID \rightarrow CheckOutDate$
+      \item $RentalID \rightarrow ReleaseType$
+      \item $Title \rightarrow Director$
+      \item $ReleaseType \rightarrow Price$
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{8}
+    We have FDs with left-side attribute, that doesn't belongs to key.
+  \end{problem}
+
+  \begin{problem}{9}
+    \begin{itemize}
+      \item We don't reuse already existing information. For example, we have
+        two rows with informaiton about film ``Die Hard'' and it's Director.
+        And every time, when we add rental information about same film, we
+        need to write all information about film, that already exists in
+        other row.
+      \item We lose information about film, when all rows related to this
+        film were deleted.
+      \item We need to change many tuples, when we want change informaiton
+        about one film. For example, with FK it's necessary to change only
+        one row.
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{10}
+    \begin{itemize}
+      \item (\underline{RentalID}, \underline{Title}, CustID, CheckOutDate, ReleaseType)
+      \item (\underline{Title}, Director)
+      \item (\underline{ReleaseType}, Price)
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{11}
+    Multivalued dependency. In that table we have two Multivalued dependencies:
+    \begin{itemize}
+      \item Course to Teacher
+      \item Course to Book
+    \end{itemize}
+    When we want to add Book to Course it's necessary to add that book
+    for every teacher on that course.
+  \end{problem}
+
+  \begin{problem}{12}
+    No.
+  \end{problem}
+
+  \begin{problem}{13}
+    It's necessary to create two relations (Course, Teacher) and (Course, Book).
+  \end{problem}
+
+  \begin{problem}{14}
+    No. FD $City, State \rightarrow ZipCode$ has not key left-side attribute.
+  \end{problem}
+
+  \begin{problem}{15}
+    I wouldn't. Because it's too complicated for such small dataset.
+  \end{problem}
+
+\end{document}
