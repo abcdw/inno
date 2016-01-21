@@ -1,0 +1,162 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 1} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    Prove or disprove:
+
+    \begin{enumerate}
+    \item if $a*b = a$: prove that $b = 1$ \\
+      \begin{eqnarray*}
+        \label{eq:problem1i1}
+        a^{-1} * a * b &=& a^{-1} * a \\
+        1 * b &=& 1;\ 1 * b = b \\
+        b &=& 1
+      \end{eqnarray*}
+    \item The difference of any two odd integers is even. \\
+      \begin{eqnarray*}
+        \label{eq:problem1i2}
+        n_1 &=& 2 * k + 1\\
+        n_2 &=& 2 * m + 1 \\
+        n_1 - n_2 &=& 2 * k + 1 - (2 * m + 1) \\
+        n_1 - n_2 &=& 2 * (k - m)
+      \end{eqnarray*}
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    Prime numbers:
+
+    \begin{enumerate}
+    \item Is $n^k - 1$ prime for any integers n and k? \\
+      Nope, $1$ isn't integer($n = 2,\ k = 1$).
+    \item Is expression $n^2 - n + 41$ a prime number? \\
+      Nope, if we take $n = k * 41\ (k \not= 0)$, that expression won't be equal
+      to 41 and will be divisible at least by 41.
+    \end{enumerate}
+  \end{problem}
+  
+  \begin{problem}{3}
+    Divisibility:
+
+    \begin{enumerate}
+    \item Prove that sum of $2*n + 1$ consecutive numbers is divisible by $2 * n
+      + 1$\
+      \begin{eqnarray*}
+        \label{eq:problem3i1}
+        a = k,\ b = k + 2n + 1 - 1\\
+        \sum_{x=a}^b x = \frac{(a + b)}{2} * (b - a + 1) = \frac{(k + k + 2n)(2n + 1)}{2} = (k + n)(2n + 1)
+      \end{eqnarray*}
+    \item Find quotient and divisor of:
+      \begin{itemize}
+      \item $n^3+2n-1$ divided by $n$
+        $$
+        \arraycolsep=0.05em
+        \begin{array}{rrr@{\,}r|r}
+          n^3&{}+2n&{}-12&&\,n\\
+          \cline{5-5}
+          n^3&{}&&&\,n^2 + 2\\
+          \cline{1-2}
+          &{}2n&{}-12\\
+          &{}2n&{}\\
+          \cline{2-3}
+          &{}&{}-12
+        \end{array}
+        $$
+        divisor: $n^2 + 2$, quotient: $-12$
+      \item $12n^5+10n^4+2$ divided by $2n+1$
+        $$
+        \arraycolsep=0.05em
+        \begin{array}{rrr@{\,}r|r}
+          12n^5&{} + 10n^4&{}+2&&\,2n+1\\
+          \cline{5-5}
+          12n^5&{} + 6n^4&&&\,6n^4 + 2n^3 - n^2 + \frac{1}{2}n - \frac14\\
+          \cline{1-2}
+          &{}4n^4&{}+2\\
+          &{}4n^4&{} + 2n^3\\
+          \cline{2-3}
+          &{}-2n^3&{} + 2\\
+          &{}-2n^3&{} - n^2\\
+          \cline{2-3}
+          &{}n^2&{}+2\\
+          &{}n^2&{}+\frac{n}{2}\\
+          \cline{2-3}
+          &{}-\frac{n}{2}&{} + 2\\
+          &{}-\frac{n}{2}&{} - \frac14\\
+          \cline{2-3}
+          &{}&{}\frac94
+        \end{array}
+        $$
+        divisor: $6n^4 + 2n^3 - n^2 + \frac{1}{2}n - \frac14$, quotient: $\frac94$
+      \end{itemize}
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{4}
+    Write each rational number as a ratio of two integers:
+    \begin{itemize}
+    \item $a = 0.4\overline{6271}$ \\
+      \begin{eqnarray*}
+        a * 10000 - a &=& 4627.1... - 0.4... \\
+        9999a &=& 4626.7\\
+        a &=& \frac{46267}{99990}
+      \end{eqnarray*}
+    \item $b = 12.1\overline{121}$
+      \begin{eqnarray*}
+        b * 1000 - b &=& 12112.1... - 12.1... \\
+        999b &=& 12100\\
+        b &=& \frac{12100}{999}
+      \end{eqnarray*}
+    \end{itemize}
+  \end{problem}
+  
+  \begin{problem}{5}
+    \begin{enumerate}
+    \item If $r$ is any rational number, then $3r^2 - 2r + 4$ is rational. \\
+      \begin{eqnarray*}
+        r &=& \frac{p}{q},\ p \in \mathbb{Z},\ q \in \mathbb{N} \backslash \{0\} \\
+        \frac{3p^2}{q^2} - 2\frac{p}{q} + 4 &=& \frac{3p^2 - 2pq + 4q^2}{q^2} =
+        \frac{a}{b},\ a \in \mathbb{Z},\ b \in \mathbb{N}
+      \end{eqnarray*}
+    \item Product and sum of two rational numbers is rational. \\
+      \begin{eqnarray*}
+        a = \frac{n}{m},\ b = \frac{p}{q},\ n,p \in \mathbb{Z},\ m,q \in \mathbb{N} \\
+        a * b = \frac{nm}{pq},\ nm \in \mathbb{Z},\ pq \in \mathbb{N} \\
+        a + b = \frac{nq + mp}{pq},\ (nq + mp) \in \mathbb{Z},\ pq \in \mathbb{N} \\
+
+      \end{eqnarray*}
+    \end{enumerate}
+  \end{problem}
+\end{document}
