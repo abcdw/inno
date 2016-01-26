@@ -1,0 +1,40 @@
+Q1.
+
+a, d, e
+
+a) correct. Class is abstract and it's not necessary to implement interface methods.
+b) incorrect. We can't write implementation for abstract methods.
+c) incorrect. We can't use keyword extends for interface, it's just syntax.
+d) correct. We just implement some method in abstract class, it's not necessary to implement all other interface's methods.
+e) correct. We implement interface method and another method.
+
+Q2.
+
+a, c, d
+
+a) correct.
+b) incorrect. Incompatible type with Plant.getType();
+c) correct. It's just ok, because Plant is the superclass of Flower.
+d) correct. It's just ok, because Plant is the superclass of Tulip and returned object is new Tulip().
+e) incorrect. Same as b) + incompatible return type.
+
+Q3.
+
+d) Because execution path will be following. Minor() -> Uber(y) -> Uber().
+Uber() increments static y, Uber(y) doubles static y and Minor() increments static y by 3.
+(2 + 1) * 2 + 3 = 9
+
+Q4.
+
+a, b
+
+a) b) Will compile, because it's just simple polymorphism.
+c) Will not compile, because there no explicit type cast.
+
+Q5.
+
+b
+
+a) Will not compile. Type X has no method do2().
+b) Will compile. It's just fine.
+c) Will not compile. Call before cast.
