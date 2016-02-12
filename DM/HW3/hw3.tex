@@ -1,0 +1,317 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 3} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    Write negations for each of the following statements:\\
+
+    A - John is six feet tall\\
+    B - John weights at least 200 pounds\\
+    $A \wedge B$ - John is six feet tall and he weighs at least 200 pounds\\
+    $\sim (A \wedge B) = \sim A \; \vee \sim B$\\
+    John is not six feet tall or he don't weighs at least 200 pounds.\\
+
+    A - The bus was late\\
+    B - Tom’s watch was slow\\
+    $A \vee B$ - The bus was late or Tom’s watch was slow\\
+    $\sim (A \vee B) = \sim A \; \wedge \sim B$\\
+    The bus was not late and Tom's watch was not slow
+
+  \end{problem}
+
+  \begin{problem}{2}
+    $(\sim p \vee q) \rightarrow \sim q$
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $\sim p$ & $\sim p \vee q$ & $\sim q$ & $(\sim p \vee q) \rightarrow \sim q$\\
+      \hline  
+      1&1&0&1&0&0\\
+      \hline  
+      1&0&0&0&1&1\\
+      \hline
+      0&1&1&1&0&0\\
+      \hline
+      0&0&1&1&1&1\\
+      \hline
+    \end{tabular} \\
+    
+    $(\sim p \wedge q) \rightarrow \sim r$ 
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+       \hline          
+       $p$ & $q$ & $r$ & $\sim p$ & $\sim p \wedge q$ & $\sim r$ & $(\sim p \wedge q) \rightarrow \sim r$\\
+       \hline  
+       1&1&1&0&0&0&1\\
+       \hline  
+       1&1&0&0&0&1&1\\
+       \hline
+       1&0&1&0&0&0&1\\
+       \hline
+       1&0&0&0&0&1&1\\
+       \hline
+       0&1&1&1&1&0&0\\
+       \hline
+       0&1&0&1&1&1&1\\
+       \hline
+       0&0&1&1&0&0&1\\
+       \hline
+       0&0&0&1&0&1&1\\
+       \hline
+     \end{tabular}
+  \end{problem}
+
+  \begin{problem}{3}
+    p: Grizzly bears have been seen in the area.\\
+    q: Hiking is safe on the trail.\\
+    r: Berries are ripe along the trail.\\
+    \begin{itemize}
+    \item Berries are ripe along the trail, but grizzly bears have not been seen in the area. $r \wedge \sim p$
+    \item Grizzly bears have not been seen in the area and hiking on the trail is safe, but berries are ripe along the trail. $\sim p \wedge r \wedge r$
+    \item If berries are ripe along the trail, hiking is safe if and only if
+      grizzly bears have not been seen in the area. $r \rightarrow (q \leftrightarrow p)$
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{4}
+
+    \begin{itemize}
+    \item 101 1110, 010 0001 \\
+    $101 1110 \vee 010 0001 = 111 1111$\\
+    $101 1110 \wedge 010 0001 = 000 0000$\\
+    $101 1110 \oplus 010 0001 = 111 1111$\\
+    \item 1111 0000, 1010 1010 \\
+    $1111 0000 \vee 1010 1010 = 1111 1010$\\
+    $1111 0000 \wedge 1010 1010 = 1010 0000$\\
+    $1111 0000 \oplus 1010 1010 = 0101 1010$\\  
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{5}
+    Given any statement form, is it possible to find a logically equivalent form
+    that uses only $\sim$ and $\wedge$? \\
+    Any logical formula can be represented in CNF with $\sim$, $\wedge$, $\vee$ operators only. Using De Morgan's low you can remove all $\vee$ operators.
+  \end{problem}
+
+  \begin{problem}{6}
+    Disjunction is commutative.
+    \begin{tabular}{|c|c|c|}
+      \hline          
+      $p$ & $q$ & $p \vee q$\\
+      \hline  
+      1&1&1\\
+      \hline  
+      1&0&1\\
+      \hline
+      0&1&1\\
+      \hline
+      0&0&0\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|}
+      \hline          
+      $p$ & $q$ & $q \vee p$\\
+      \hline  
+      1&1&1\\
+      \hline  
+      1&0&1\\
+      \hline
+      0&1&1\\
+      \hline
+      0&0&0\\
+      \hline
+    \end{tabular}\\\\
+    
+    Disjunction is associative.
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $r$ & $p \vee q$ & $(p \vee q) \vee r$\\
+      \hline  
+      1&1&1&1&1\\
+      \hline  
+      1&1&0&1&1\\
+      \hline
+      1&0&1&1&1\\
+      \hline
+      1&0&0&1&1\\
+      \hline
+      0&1&1&1&1\\
+      \hline
+      0&1&0&1&1\\
+      \hline
+      0&0&1&0&1\\
+      \hline
+      0&0&0&0&0\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $r$ & $q \vee r$ & $p \vee (q \vee r)$\\
+      \hline  
+      1&1&1&1&1\\
+      \hline  
+      1&1&0&1&1\\
+      \hline
+      1&0&1&1&1\\
+      \hline
+      1&0&0&1&1\\
+      \hline
+      0&1&1&1&1\\
+      \hline
+      0&1&0&0&1\\
+      \hline
+      0&0&1&1&1\\
+      \hline
+      0&0&0&0&0\\
+      \hline
+    \end{tabular}\\\\
+  \end{problem}
+
+  \begin{problem}{7}
+    $\sim (p \wedge q) \not= \sim p \; \wedge \sim q$
+    \begin{tabular}{|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $p \wedge q$ & $\sim(p \wedge q)$\\
+      \hline  
+      1&1&1&0\\
+      \hline  
+      1&0&0&1\\
+      \hline
+      0&1&0&1\\
+      \hline
+      0&0&0&1\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $\sim p$ & $\sim q$ & $\sim p \; \wedge \sim q$\\
+      \hline  
+      1&1&0&0&0\\
+      \hline  
+      1&0&0&1&0\\
+      \hline
+      0&1&1&0&0\\
+      \hline
+      0&0&1&1&1\\
+      \hline
+    \end{tabular}\\\\
+    
+    $\sim (p \wedge q) = \sim p \; \vee \sim q$
+    \begin{tabular}{|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $p \wedge q$ & $\sim(p \wedge q)$\\
+      \hline  
+      1&1&1&0\\
+      \hline  
+      1&0&0&1\\
+      \hline
+      0&1&0&1\\
+      \hline
+      0&0&0&1\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $\sim p$ & $\sim q$ & $\sim p \; \vee \sim q$\\
+      \hline  
+      1&1&0&0&0\\
+      \hline  
+      1&0&0&1&1\\
+      \hline
+      0&1&1&0&1\\
+      \hline
+      0&0&1&1&1\\
+      \hline
+    \end{tabular}\\\\
+
+  \end{problem}
+
+
+  \begin{problem}{8}
+    Implication is logically equivalent to its contrapositive. \\
+    \begin{tabular}{|c|c|c|}
+      \hline          
+      $p$ & $q$ & $p \rightarrow q$\\
+      \hline  
+      1&1&1\\
+      \hline  
+      1&0&0\\
+      \hline
+      0&1&1\\
+      \hline
+      0&0&1\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $\sim q$ & $\sim p$ & $\sim q \rightarrow \sim p$\\
+      \hline  
+      1&1&0&0&1\\
+      \hline  
+      1&0&1&0&0\\
+      \hline
+      0&1&0&1&1\\
+      \hline
+      0&0&1&1&1\\
+      \hline
+    \end{tabular}\\\\
+    Converse is logically equivalent to the inverse. \\
+    \begin{tabular}{|c|c|c|}
+      \hline          
+      $p$ & $q$ & $q \rightarrow p$\\
+      \hline  
+      1&1&1\\
+      \hline  
+      1&0&1\\
+      \hline
+      0&1&0\\
+      \hline
+      0&0&1\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline          
+      $p$ & $q$ & $\sim p$ & $\sim q$ & $\sim p \rightarrow \sim q$\\
+      \hline  
+      1&1&0&0&1\\
+      \hline  
+      1&0&0&1&1\\
+      \hline
+      0&1&1&0&0\\
+      \hline
+      0&0&1&1&1\\
+      \hline
+    \end{tabular}\\\\
+  \end{problem}
+
+\end{document}
