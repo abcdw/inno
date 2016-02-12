@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 4} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    \begin{enumerate}
+    \item $\forall x P(x) \rightarrow \sim Q(x)$
+    \item $\sim \exists S(x) \rightarrow R(x)$
+    \item $\forall x \sim Q(x) \rightarrow S(x)$
+    \item $\forall x P(x) \rightarrow \sim R(x)$
+    \item Yes
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{enumerate}
+    \item Exists such figure that is both Circle and Ellipse. true
+    \item Exists such figure that is Circle and not Ellipse. false
+    \item All circles are ellipses. true
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{3}
+    $\sim(\forall x A(x) \rightarrow B(x)) = \exists x A(x) \wedge B(x)$ \\
+    a, c
+  \end{problem}
+
+  \begin{problem}{4}
+    \begin{enumerate}
+    \item true
+    \item true
+    \item false, 18
+    \item true
+    \item false, -6
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{5}
+    $\exists x \in \mathbb{R}, x^2 \geq 4 \wedge x \leq 2$
+  \end{problem}
+
+  \begin{problem}{6}
+    \begin{enumerate}
+    \item false
+    \item true
+    \item false
+    \item false
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{7}
+    \begin{enumerate}
+    \item Exist such student that read LOTR
+    \item All students read 50 shades of Gray
+    \item Every student read at least one book
+    \item Exist such book that read by every student
+    \item Exist such book that read at least by two students
+    \item Exist such pair of different students that one of them read all books that read other
+    \end{enumerate}
+
+  \end{problem}
+
+
+  \begin{problem}{8}
+    \begin{enumerate}
+    \item false, $x = 1$
+    \item true
+    \item false, $x = 1, y = 1$
+    \item true, $y = \frac{1}{x}$
+    \item false, $x = 0$
+    \item false, $x = 1, y = 10$
+    \itme true
+    \item true, $u = 1/10$
+    \end{enumerate}
+  \end{problem}
+  
+  \begin{problem}{10}
+    \begin{enumerate}
+    \item Universal Modus Tollens \\
+      $C(x) - x$ is cat, $P(x) - x$ poors \\
+      $\forall x C(x) \rightarrow P(x)$ \\
+      $\sim P(John)$\\
+      \noindent\rule{2cm}{0.4pt} \\
+      $\sim C(John)$
+    \item Universal Modus Ponens \\
+      $T(x) - x$ is teacher, $H(x) - x$ is handsome \\
+      $\forall x T(x) \rightarrow H(x)$ \\
+      $T(Arthur)$\\
+      \noindent\rule{2cm}{0.4pt} \\
+      $H(Arthur)$
+    \item Universal Modus Ponens \\
+      $R(x) - x$ is Russian, $H(x) - x$ is happy \\
+      $\forall x R(x) \rightarrow H(x)$ \\
+      $R(Gerard Depardieu)$\\
+      \noindent\rule{4cm}{0.4pt} \\
+      $H(Gerard Depardieu)$
+    \end{enumerate}
+  \end{problem}
+
+\end{document}
