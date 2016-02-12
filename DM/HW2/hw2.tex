@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 2} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    Let $M = (8, 15),\ N = (9, 20)$ on real axis, then $K = M \cup N$ will be
+    $(8, 20)$
+  \end{problem}
+
+  \begin{problem}{2}
+    $A = \{a,b,\{a,b\}\}$. How many elements does this set have: $P(A)$.
+    \begin{eqnarray*}
+      N(A) = 3 \\
+      N(P(A)) = 2^{N(A)} = 2^3 = 8
+    \end{eqnarray*}
+  \end{problem}
+
+  \begin{problem}{3}
+    \begin{itemize}
+    \item For every $x$ in $\mathbb{R}$ $x$ in power of two not equal to minus one. It's true.
+    \item Exists such $x$ in $\mathbb{Z}$, that $x$ in power of two equal to 2.
+      It's false.
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{4}
+    Let $A = \{1,2,3,4,5\}$ and $B = \{0,3,6\}$. Find
+    \begin{itemize}
+    \item $A \cup B = \{0,1,2,3,4,5,6\}$
+    \item $A \cap B = \{3\}$
+    \item $A - B = \{1, 2, 4, 5\}$
+    \item $B - A = \{0, 6\}$
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{5}
+    $A - B = A \cap B^c$
+    \begin{eqnarray*}
+      x \in (A - B) \Rightarrow
+      x \in A \& x \not\in B \Rightarrow
+      x \in A \& x \in B^c \Rightarrow
+      x \in (A \cap B^c)
+    \end{eqnarray*}
+    \begin{eqnarray*}
+      x \in (A \cap B^c) \Rightarrow
+      x \in A \& x \in B^c \Rightarrow
+      x \in A \& x \not\in B \Rightarrow
+      x \in (A - B)
+    \end{eqnarray*}
+  \end{problem}
+
+  \begin{problem}{6}
+    \begin{itemize}
+    \item $A \cap B \cap C = \{4, 6\}$
+    \item $(A \cup B) \cap C = \{4, 5, 6, 8, 10\}$
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}{7}
+    It's hard enough to draw them with LaTeX.
+    \begin{itemize}
+    \item $A \cap (B - C)$ will look like three circles and only one small
+      part, that belongs to A and B, but not C will be filled.
+    \item All universe will be filled, except circles related to $A, B, C$.
+    \end{itemize}
+  \end{problem}
+
+
+  \begin{problem}{8}
+    $A^c \cup (A \cup B^c \cup C^c)^c \cup (B \cap (A \cup C)^c)
+    = A^c \cup (B - (A \cup C)) = A^c$
+  \end{problem}
+
+\end{document}
