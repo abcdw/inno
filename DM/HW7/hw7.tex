@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 7} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    Let $P(n) = 5^n + 9 < 6^n$. $P(2)$ is true. Suppose that $P(k)$ is also true. \\
+    $P(k+1):$ $5^{k+1}+9<6^{k+1}$ \\
+    $5^{k+1} + 9 < 5(5^k + 9) < 6(5^k + 9)$ \\
+    $6(5^k + 9) < 6 * 6^k$ \\
+    $5^k + 9 < 6^k$ is true by our assumption, that's mean that $P(k+1)$ is also true.
+  \end{problem}
+
+  \begin{problem}{2}
+    Suppose all triplets of successive integers has sum less than 45. That's mean that if we divide all
+    of numbers in triplets(of successive integers) in any way then we will get 10 triplets with overall sum
+    of $450(45 * 10)$, but we know that sum of all integers in range from 1 to
+    30 is 465. It's contradiction and our assumption is wrong.
+  \end{problem}
+  
+  \begin{problem}{3}
+    $P(n) =$ product of n odd integers is odd.\\
+    $P(2)$ is true($(2n+1)(2m+1)=2(2mn + n + m) + 1$). Suppose $P(i)$ is true for all $i < k$.\\
+    Let's prove $P(k)$:\\
+    $(a_1\dots a_l)(a_{l+1}\dots a_k)$. $(a_1\dots a_l)$ is odd by our
+    assumption $P(l<k)$. $(a_{l+1}\dots a_k)$ is also odd $P(k - l < k)$. And
+    $P(2)$ is true. \\
+    Hence, $(a_1\dots a_l)(a_{l+1}\dots a_k)$ is also true.
+  \end{problem}
+
+  \begin{problem}{4}
+    It's not statisfies.
+    $a_{k+1} = 2(k - 1)^2 + k = 2k^2 - 3k + 2 \not= k^2$.
+  \end{problem}
+\end{document}
