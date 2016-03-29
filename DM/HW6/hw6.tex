@@ -1,0 +1,110 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 6} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    \begin{enumerate}
+    \item $1, -\frac13, \frac19$
+    \item $0, 2, 2$
+    \item $0, 4, 4$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{enumerate}
+    \item 20
+    \item 11
+    \item $1 + \frac12 + \frac14 + \frac18 = \frac{15}{8}$
+    \item $\frac{10}{11}$
+      % (defn elem [n]
+      % (/ 1 (* n (+ n 1))))
+      % (reduce (fn [p x] (+ p (elem x))) (range 11))
+    \end{enumerate}
+  \end{problem}
+  
+  \begin{problem}{3}
+    \begin{enumerate}
+    \item $576$
+    \item $1$
+    \item $\frac12$
+    \item $\frac{43}{5}$
+      % (defn elem [n]
+      % (/ (* n (+ n 2)) (* (- n 1) (+ n 1))))
+      % (reduce (fn [p x] (+ p (elem x))) 1 (range 2 6))
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{4}
+    \begin{enumerate}
+    \item $\sum\limits_{i=1}^{k+1} i^3$
+    \item $\sum\limits_{k=1}^{m+1} \frac{k}{k+1}$
+    \item $\sum\limits_{m=0}^{n+1} (m+1)2^m$
+    \item $\sum\limits_{k=1}^{n} 2(3k^2+4) + 5(2k^2-1)$
+    \item $\prod\limits_{k=1}^{n} \frac{k}{k+2}$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{5}
+    \begin{enumerate}
+    \item $\sum\limits_{i=1}^{7} (-1)^{i+1} i^2$
+    \item $\prod\limits_{i=2}^{4} (i^2 - 1)$
+    \item $\sum\limits_{i=2}^{6} (-1)^i \frac{i}{(i+1)(i+2)}$
+    \item $\prod\limits_{i=1}^{4} (1-t^i)$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{6}
+    \begin{enumerate}
+    \item $\sum\limits_{j=0}^{n-2} \frac{j+1}{(n-j-1)^2}$
+    \item $\prod\limits_{j=n-1}^{2n-1} \frac{n-j}{n+j+1}$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{7}
+    Prove that $\frac{4(4^{k+1} - 16)}{3} = \frac{4(4^{k}-16)}{3} + 4^{k+1}$.\\
+    $\frac{4(4^{k}-16)}{3} + 4^{k+1} = 
+    \frac{4(4^{k} + 3(4^{k}) - 16)}{3} = \frac{4(4^{k+1} - 16)}{3}$
+  \end{problem}
+
+  \begin{problem}{8}
+    It's true for $k=1$, let's prove that
+    $\frac1{(2k+2)!} = \frac1{(2(k-1)+2)!} \frac1{2k +1} \frac1{2k + 2}$\\
+    $\frac1{(2(k-1)+2)!} \frac1{2k +1} \frac1{2k + 2} =
+    \frac1{(2k)!}\frac1{2k+1}\frac1{2k+2}=\frac1{(2k)!(2k+1)(2k+2)}=
+    \frac1{(2k+2)!}$
+  \end{problem}
+\end{document}
