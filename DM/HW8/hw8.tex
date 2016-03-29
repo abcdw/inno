@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\usepackage{minted}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 8} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    $g(A) = \{a\}, g(X) = \{a, d\}.$\\
+    Inverse function doesn't exists. But maybe
+    you want something like this: $ g^{-1}(C) = \{1, 2, 3\}, g^{-1}(D) =
+    \emptyset, g^{-1}(Y) = X$
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{enumerate}
+    \item true
+    \item false, because inverse function may not exists.
+    \end{enumerate}
+  \end{problem}
+  
+  \begin{problem}{4}
+    \begin{enumerate}
+    \item They one to one, same result can't be reached with different
+      parametrs, because of primes.
+    \item They are not onto. 2 can't be reached.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{5}
+    Because of fulfillment of two properties these functions both bijections.
+    Bijections always have inverse function. If functions is bijections then
+    composition is bijection too. As we said above bijections always have
+    inverse function. 
+    But actually $f(g(x))$ doesn't exists because of incompatible domains.
+  \end{problem}
+
+  \begin{problem}{8}
+    \inputminted{python}{calc.py}
+  \end{problem}
+\end{document}
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
