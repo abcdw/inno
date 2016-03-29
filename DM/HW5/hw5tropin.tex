@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize BS3-5, 2016, <<DM>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Problem #1.} \newline}{}
+
+\title{DM homework 5} % Fill the number of the homework
+\author{Tropin Andrew \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw}{abcdw}}
+\date{\today} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{1}
+    $\frac{x^8+x^4-2x^2+6}{x^4+2x^2+3} + 2x^2 - 2 = x^4$\\
+    $x^4$ can't be prime, sorry :'(
+  \end{problem}
+
+  \begin{problem}{2}
+    Mistake is that we took as free variable k in both numbers (n and m).
+    Difference between odd and even number is not always 1.
+  \end{problem}
+
+  \begin{problem}{3}
+    $\frac12 + 8(n^2(2n^2 + 3) + 1) - \frac{\cos 2n}{2}+\frac{1}{1+\tan^2n} =\\
+    16n^4 + 24n^2 + 8 + \sin^2n + \cos^2n = 16n^4 + 24n^2 + 9 = (4n^2 + 3)^2$
+  \end{problem}
+
+  \begin{problem}{4}
+    $r = \fracpq$ is rational if p and $q\not=0$ are integers.
+    Multiplication and addition of integers produce integers.
+    That's why $10m+ 15n$ and $4n$ are integers. That's mean, that
+    $\frac{10m+15n}{4n}$ is rational by definition.
+  \end{problem}
+
+  \begin{problem}{5}
+    $x^2 + bx + c = 0$\\
+    $d = b^2 - 4c$\\
+    $x_{12} = \frac{-b \pm \sqrt{d}}{2}$\\
+    If $x_1$ is rational then $-b + \sqrt{d}$ is integer and if $-b +\sqrt{d}$
+    is integer then $-b - \sqrt{d}$ is also integer or vise verse. And that's
+    mean that $x_2$ is also rational.
+  \end{problem}
+
+  \begin{problem}{6}
+    Let $r_i = \frac{p_i}{q_i}$. Just multiply first equation by $q_3q_2q_1q_0$
+    and get integer numbers instead of rational.
+  \end{problem}
+
+  \begin{problem}{7}
+    Lets do some magic and we will get that
+    $\frac1a = \frac1x + \frac1y$\\
+    $\frac1b = \frac1x + \frac1z$\\
+    $\frac1c = \frac1y + \frac1z$\\
+    $x = 1/(\frac1{2a} + \frac1{2b} - \frac1{2c})$ x is rational.
+  \end{problem}
+
+
+  \begin{problem}{9}
+    Just move condition from while(condition) loop to for(;condition;) loop. And
+    do same thing with body of the loop.
+  \end{problem}
+  
+\end{document}
